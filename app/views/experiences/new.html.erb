@@ -1,0 +1,10 @@
+<h2>Create a new experience</h2>
+
+<%= simple_form_for [current_user, @experience] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Back to all experiences', user_experiences_path() %>
