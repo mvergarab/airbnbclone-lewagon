@@ -22,7 +22,6 @@ class ExperiencesController < ApplicationController
   end
 
   def edit
-
   end
 
   private
