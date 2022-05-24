@@ -15,7 +15,7 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new(review_params)
     @experience.user = current_user
     if @experience.save
-      redirect_to user_experiences_path(current_user), notice: 'Experience was successfully created.'
+      redirect_to experiences_path, notice: 'Experience was successfully created.'
     else
       render :new
     end
