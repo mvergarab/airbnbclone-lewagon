@@ -1,0 +1,44 @@
+.background {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+
+.container-show {
+  display: block;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding-top: 80px;
+}
+
+.ultimate-container {
+  height: 756px;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.new-booking {
+  align-self: flex-end;
+}
+
+.experience-box {
+  display: flex;
+}
+
+.details {
+  box-shadow: 0px 4px 2px #ececec;
+  border: 1px solid #fef8f9;
+  background-color: #fef8f9;
+  margin-left: 16px;
+  padding: 12px;
+  width: 284px;
+  border-radius: 4px;
+  height: inherit;
+  margin-bottom: 48px;
+  margin-top: 12px;
+}
