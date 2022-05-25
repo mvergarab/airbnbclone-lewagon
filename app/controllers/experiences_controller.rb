@@ -12,7 +12,7 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    @experience = Experience.new(review_params)
+    @experience = Experience.new(experience_params)
     @experience.user = current_user
     if @experience.save
       redirect_to experiences_path, notice: 'Experience was successfully created.'
@@ -22,11 +22,26 @@ class ExperiencesController < ApplicationController
   end
 
   def edit
+    @experience = Experience.find(params[:id])
+  end
+
+  def update
+    @experience = Experience.find(params[:id])
+    @experience.update(experience_params)
+    redirect_to experience_path(@experience)
+  end
+
+  def destroy
+    @experience = Experience.find(params[:id])
+    @experience.destroy
+    redirect_to experiences_path, status: :see_other
+
   end
 
   private
 
-  def review_params
-    params.require(:experience).permit(:name, :description, :price)
+  def experience_params
+    params.require(:experience).permit(:name, :city, :price, :description)
   end
+
 end
