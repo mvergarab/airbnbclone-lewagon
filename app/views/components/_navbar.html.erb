@@ -15,7 +15,7 @@
             <%= link_to "Show All Experiences", experiences_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Surprise me!",  "#", class: "nav-link" %>
+            <%= link_to "Surprise me!",  experience_path(Experience.all.sample), class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://media-cldnry.s-nbcnews.com/image/upload/streams/2013/June/130617/6C7911377-tdy-130617-leo-toasts-1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
