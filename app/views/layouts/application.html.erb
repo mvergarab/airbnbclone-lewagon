@@ -16,22 +16,10 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= render partial: 'components/navbar' %>
-    <%= yield %>
-
-    <footer>
-    <div class="footer">
-      <div class="footer-links">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/hamzashah/"><i class="fab fa-linkedin"></i></a>
-      </div>
-      <div class="footer-copyright">
-        This footer is made with <i class="fas fa-heart"></i> at Life For Rent
-      </div>
+    <div class="page-container">
+      <div class="navbar-container"><%= render "components/navbar" %></div>
+      <div class="content-container"><%= yield %></div>
+      <div class="footer-container"><%= render "components/footer" %></div>
     </div>
-    </footer>
   </body>
 </html>
