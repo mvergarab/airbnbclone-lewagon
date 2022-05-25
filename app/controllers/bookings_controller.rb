@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.experience = @experience
     @booking.user = current_user
     @booking.save
-    redirect_to experience_booking_path(@experience,@booking), notice: 'Bookings created created'
+    redirect_to experience_booking_path(@experience,@booking)
   end
 
   def show
