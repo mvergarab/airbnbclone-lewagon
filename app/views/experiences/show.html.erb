@@ -3,9 +3,9 @@
     <div class="container-show">
       <div class="main-boxes">
         <div class="hero-section">
-          <%# <div class="experience-image">
-            <%= cl_image_tag @experience.photo.key, height: 300, width: 400, crop: :fill %> %>
-          <%# </div> %>
+          <div class="experience-image">
+            <%= cl_image_tag @experience.photo.key, height: 300, width: 400, crop: :fill %>
+          </div>
           <div class="new-booking">
             <a><%= link_to "Book", new_experience_booking_path(@experience),class: 'btn btn-primary' %></a>
           </div>
