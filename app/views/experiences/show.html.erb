@@ -18,8 +18,10 @@
             <div class="description">
               <h4 class="intro">What you would do...</h4>
               <p class="description-text"><%= @experience.description %></p>
-              <%= link_to "Edit", edit_experience_path(@experience), :class=> 'btn btn-primary'%>
-              <%= link_to "Delete", experience_path(@experience), data: { turbo_method: :delete, turbo_confirm: "Are you sure"}, :class=> 'btn btn-success'%>
+              <% if current_user == @experience.user %>
+                <%= link_to "Edit", edit_experience_path(@experience), :class=> 'btn btn-primary'%>
+                <%= link_to "Delete", experience_path(@experience), data: { turbo_method: :delete, turbo_confirm: "Are you sure"}, :class=> 'btn btn-success'%>
+              <% end %>
             </div>
           </div>
           <div class="details">
