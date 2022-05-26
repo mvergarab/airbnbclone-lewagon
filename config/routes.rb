@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :experiences do
     resources :bookings, only: [:new,:create, :show, :destroy]
   end
+  resources :bookings, only: [:index]
 end
