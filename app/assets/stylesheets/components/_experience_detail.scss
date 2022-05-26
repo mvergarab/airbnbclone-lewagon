@@ -1,0 +1,23 @@
+.final-container {
+ max-width:55%;
+}
+
+.experience-detail-container {
+ display:flex;
+ justify-content:space-around;
+}
+
+.experience-container {
+ display:flex;
+ flex-direction:column;
+ justify-content:space-between;
+}
+
+.detail-container {
+ display:flex;
+ flex-direction:column;
+}
+.experience-price {
+ display:flex;
+ justify-content:space-between ;
+}
