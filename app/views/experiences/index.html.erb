@@ -1,38 +1,35 @@
 <div id="image-container">
   <div class="banner">
     <div id="form-container">
-      <form>
-        <label for="fname">Live new experiences:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-      </form>
+      <%= form_tag experiences_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Where do you wanna experience..."
+        %>
+        <%= submit_tag "go..", class: "btn-main" %>
+      <% end %>
     </div>
   </div>
 </div>
 <div class="experiences-container">
-  <h1>Explore our experiences around you!</h1>
+  <h1 class="py-4">Explore our experiences around you!</h1>
 
-  <%= form_tag experiences_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Where do you wanna experience..."
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
   <div class="experience-cards">
     <% @experiences.each do |experience| %>
-      <%= link_to experience_path(experience) do %>
-        <div class="btn-img btn-img-combo experience-card-category " style="background-image: linear-gradient(
-                                                          180deg,
-                                                            rgba(0, 0, 0, 0.8),
-                                                            rgba(0, 0, 0, 0.2)),
-                                                            url(https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770)
-                                                        ;
-                                                        ">
-          <%= experience.name %>
-          <p class="text"><%= experience.description %></p>
+      <div class="card-trip">
+        <%= link_to experience_path(experience) do %>
+          <%= cl_image_tag experience.photo.key, crop: :fill, class:"img"%>
+          <div class="card-trip-infos">
+            <div>
+              <%= experience.name %>
+              <p><%= experience.description %></p>
+            </div>
+          <h2 class="card-trip-pricing">$ <%= experience.price %></h2>
+          <%= cl_image_tag experience.user.photo.key, class:"card-trip-user avatar-bordered" %>
           </div>
-      <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
