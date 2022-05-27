@@ -25,11 +25,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    temp = bookings_params
-    date_params = {}
-    date_params[:start_date] = Date.new(temp["start_date(1i)"].to_i, temp["start_date(2i)"].to_i, temp["start_date(3i)"].to_i)
-    date_params[:end_date] = Date.new(temp["end_date(1i)"].to_i, temp["end_date(2i)"].to_i, temp["end_date(3i)"].to_i)
-    @booking = Booking.new(date_params)
+    @booking = Booking.new(bookings_params)
     @booking.experience = @experience
     @booking.user = current_user
     @booking.save
