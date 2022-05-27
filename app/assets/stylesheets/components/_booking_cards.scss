@@ -1,0 +1,88 @@
+.booking-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 80px;
+ }
+
+ .booking-card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.3s ease;
+ }
+
+ .booking-card-category:hover {
+  height: 200px; //bookmark ----think about the height
+ }
+
+ a {
+  text-decoration: none;
+ }
+
+ .booking-card-category .text {
+   width: 80%;
+   margin: 0 auto;
+   font-size: 13px;
+   text-align: center;
+   margin-top: 20px;
+   color: white;
+   font-weight: 200;
+   letter-spacing: 2px;
+   opacity: 0;
+   max-height:0;
+   transition: all 0.3s ease;
+ }
+
+ .booking-card-category:hover .text {
+   transition: all 0.3s ease;
+   opacity: 1;
+   max-height:40px;
+ }
+
+ // Smallest device
+ @media (min-width: 100px) and (max-width: 575px) {
+   .booking-cards {
+     grid-template-columns: 1fr;
+   }
+ }
+
+ // Small devices (landscape phones, 576px and up)
+ @media (min-width: 576px) {
+   .booking-cards {
+     grid-template-columns: 1fr;
+   }
+ }
+
+ // Medium devices (tablets, 768px and up)
+ @media (min-width: 768px) {
+   .booking-cards {
+     grid-template-columns: 1fr 1fr;
+   }
+ }
+
+ // Large devices (desktops, 992px and up)
+ @media (min-width: 992px) {
+   .booking-cards {
+     grid-template-columns: 1fr 1fr 1fr;
+   }
+ }
+
+ // Extra large devices (large desktops, 1200px and up)
+ @media (min-width: 1200px) {
+   .booking-cards {
+     grid-template-columns: 1fr 1fr 1fr;
+   }
+ }

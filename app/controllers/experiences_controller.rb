@@ -1,6 +1,10 @@
 class ExperiencesController < ApplicationController
   def index
-    @experiences = Experience.all
+    if params[:query].present?
+      @experiences = Experience.where("city ILIKE ?", "%#{params[:query]}%")
+    else
+      @experiences = Experience.all
+    end
   end
 
   def show
@@ -41,7 +45,7 @@ class ExperiencesController < ApplicationController
   private
 
   def experience_params
-    params.require(:experience).permit(:name, :city, :price, :description)
+    params.require(:experience).permit(:name, :city, :price, :description, :photo)
   end
 
 end
