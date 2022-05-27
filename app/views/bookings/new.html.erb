@@ -4,8 +4,8 @@
       <div class="calcontainer">
         <h3>Make your booking here!</h3>
         <%= simple_form_for [@experience,@booking] do |f| %>
-          <%= f.input :start_date, placeholder: 'Your experience starts at:' %>
-          <%= f.input :end_date, placeholder: 'Your experience ends at:' %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
           <%= f.button :submit, class: 'btn btn-flat' %>
         <% end %>
       </div>
