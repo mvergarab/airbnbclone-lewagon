@@ -1,0 +1,32 @@
+.final-container {
+ margin-top:40px;
+ align-items:center;
+}
+
+.experience-detail-container {
+ box-shadow: 0 0 15px rgb(222, 217, 217);
+ border-radius: 10px;
+ display:flex;
+}
+
+.experience-container {
+ padding:20px;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-between;
+}
+
+.detail-container {
+ display:flex;
+ flex-direction:column;
+}
+.experience-price {
+ padding-top:20px;
+ border-top: 1px solid black;
+ display:flex;
+ justify-content:space-between ;
+}
+
+.camel-avatar {
+  border-radius: 10px;
+}
