@@ -1,5 +1,24 @@
+<div id="image-container">
+  <div class="banner">
+    <div id="form-container">
+      <form>
+        <label for="fname">Live new experiences:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+      </form>
+    </div>
+  </div>
+</div>
 <div class="experiences-container">
   <h1>Explore our experiences around you!</h1>
+
+  <%= form_tag experiences_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Where do you wanna experience..."
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
   <div class="experience-cards">
     <% @experiences.each do |experience| %>
       <%= link_to experience_path(experience) do %>
